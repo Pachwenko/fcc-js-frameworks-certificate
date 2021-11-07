@@ -17,7 +17,7 @@ export default function Quotes() {
   };
   useEffect(() => {
     fetchQuote();
-  }, {});
+  }, []);
 
   return (
     <div className="container mx-auto flex flex-col px-4 py-6 bg-gray-700 text-center w-3/4 md:h-1/2 h-3/4 justify-center rounded shadow-xl">

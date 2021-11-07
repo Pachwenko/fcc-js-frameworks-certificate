@@ -8,11 +8,10 @@
     "build": "astro build",
     "preview": "astro preview"
   },
-  "devDependencies": {
-    "astro": "^0.20.12"
-  },
   "dependencies": {
+    "astro": "^0.20.12",
     "autoprefixer": "^10.4.0",
+    "marked": "^4.0.0",
     "tailwindcss": "^2.2.19"
   }
 }
