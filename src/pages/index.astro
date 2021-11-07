@@ -1,47 +1,27 @@
 ---
 // Component Imports
-import Counter from '../components/Counter.jsx'
-const someProps = {
-  count: 0,
-}
+import BaseHead from './layouts/BaseHead.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-    <style>
-      :global(:root) {
-        font-family: system-ui;
-        padding: 2em 0;
-      }
-      :global(.counter) {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        place-items: center;
-        font-size: 2em;
-        margin-top: 2em;
-      }
-      :global(.children) {
-        display: grid;
-        place-items: center;
-        margin-bottom: 2em;
-      }
-    </style>
+    <BaseHead title="FCC JS Frameworks Projects" description="My projects for the Free Code Camp Frontend Framework Certification" />
   </head>
   <body>
-    <main>
-      <Counter {...someProps} client:visible>
-        <h1>Hello React!</h1>
-      </Counter>
+    <main class="bg-gray-800 text-gray-100 h-screen">
+      <div class="container mx-auto justify-center text-center flex flex-col p-16">
+        <h1 class="text-2xl text-bold p-4">My projects for the Free Code Camp Frontend Framework Certification</h1>  
+        <br />
+        <ul>
+          <li id="1">
+            <a href="/projects/quote-machine" class="normal-link">
+            <h2 class="text-xl text-bold">Quote Machine</h2>
+            </a>
+          </li>
+        </ul>
+      </div>
     </main>
   </body>
 </html>

@@ -1,0 +1,11 @@
+---
+// src/layouts/BaseHead.astro
+const {title, description} = Astro.props;
+---
+<meta charset="UTF-8">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="stylesheet" type="text/css" href={Astro.resolve("../../styles/global.css")}>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />

@@ -1,5 +1,5 @@
 {
-  "name": "@example/framework-react",
+  "name": "fcc-js-frameworks-certificate",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "astro": "^0.20.12"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "tailwindcss": "^2.2.19"
   }
 }
