@@ -46,30 +46,39 @@ And here. | Okay. | I think we get it.
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 `;
 
-export default function Quotes() {
+// use Github type rendering
+// see more options at https://marked.js.org/using_advanced#options
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+});
+
+export default function MarkdownPreviewer() {
   const [markdownInput, setMarkdownInput] = useState(placeholder);
-  const [preview, setPreview] = useState("");
-  const updatePreview = async () => {
-    setPreview(marked(markdownInput, new marked.Renderer()));
-    console.log(preview);
+  const [preview, setPreview] = useState(marked(placeholder, new marked.Renderer()));
+  function updatePreview(markdownInput) {
+    setMarkdownInput(markdownInput);
+    if (markdownInput) {
+      setPreview(marked(markdownInput, new marked.Renderer()));
+    }
   };
   useEffect(() => {
     updatePreview();
   }, []);
 
   return (
-    <div className="container mx-auto grid grid-rows-1 grid-cols-2 p-2 bg-gray-700 text-center w-full min-h-full justify-center rounded">
+    <div className="container mx-auto flex p-2 bg-gray-700 text-center w-full min-h-full justify-center rounded">
       <textarea
         value={markdownInput}
-        onChange={(e) => setMarkdownInput(e.target.value)}
+        onChange={(e) => updatePreview(e.target.value)}
         id="editor"
-        className="bg-gray-600 text-gray-100 min-h-100 p-2 rounded border-solid border-2 border-gray-800"
+        className="bg-gray-600 text-gray-100 w-1/2 min-h-100 p-2 rounded border-solid border-2 border-gray-800"
       >
       </textarea>
       <div
         dangerouslySetInnerHTML={{__html: preview}}
         id="preview"
-        className="prose min-h-100 p-2 rounded text-left bg-gray-100 border-solid border-2 border-blue-800"
+        className="prose min-h-100 p-2 w-1/2 rounded text-left bg-gray-100 border-solid border-2 border-blue-800"
       ></div>
     </div>
   );
