@@ -58,18 +58,18 @@ export default function Quotes() {
   }, []);
 
   return (
-    <div className="container mx-auto grid grid-rows-1 grid-cols-2 p-2 bg-gray-700 text-center w-full min-h-full justify-center rounded shadow-xl">
+    <div className="container mx-auto grid grid-rows-1 grid-cols-2 p-2 bg-gray-700 text-center w-full min-h-full justify-center rounded">
       <textarea
         value={markdownInput}
         onChange={(e) => setMarkdownInput(e.target.value)}
         id="editor"
-        className="bg-gray-100 text-gray-600 min-h-100 p-2 rounded"
+        className="bg-gray-600 text-gray-100 min-h-100 p-2 rounded border-solid border-2 border-gray-800"
       >
       </textarea>
       <div
         dangerouslySetInnerHTML={{__html: preview}}
         id="preview"
-        className="markdown bg-gray-600 text-gray-100 min-h-100 p-2 rounded text-left"
+        className="prose min-h-100 p-2 rounded text-left bg-gray-100 border-solid border-2 border-blue-800"
       ></div>
     </div>
   );

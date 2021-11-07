@@ -4,10 +4,13 @@ module.exports = {
   purge: ['./public/**/*.html', './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}'],
   // more options here
   theme: {
-      extend: {
-        backgroundImage: {
-         'diamond-pattern': "url('/overlapping-diamonds.svg')",
-        }
+    extend: {
+      backgroundImage: {
+        'diamond-pattern': "url('/overlapping-diamonds.svg')",
       }
     }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
