@@ -37,19 +37,19 @@ export default function DrumMachine() {
 
   return (
     <div 
-      className="container mx-auto grid grid-cols-4 grid-rows-3 gap-2 grid-flow-col px-4 py-6 bg-gray-700 text-center w-3/4 md:h-1/2 h-3/4 justify-center rounded shadow-xl"
+      className="container mx-auto grid grid-cols-5 grid-rows-3 gap-2 grid-flow-row px-4 py-6 bg-gray-700 text-center w-3/4 md:h-1/2 h-3/4 justify-center rounded shadow-xl"
       id="drum-machine"
     >
-      <DrumPad callback={() => playAudio("Q")} trigger="Q" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <DrumPad callback={() => playAudio("W")} trigger="W" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <DrumPad callback={() => playAudio("E")} trigger="E" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <DrumPad callback={() => playAudio("A")} trigger="A" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <DrumPad callback={() => playAudio("S")} trigger="S" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <DrumPad callback={() => playAudio("D")} trigger="D" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <DrumPad callback={() => playAudio("Z")} trigger="Z" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <DrumPad callback={() => playAudio("X")} trigger="X" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <DrumPad callback={() => playAudio("C")} trigger="C" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <h2 value={display} id="display" className="text-2xl text-bold col-span-2 row-span-3">{display}</h2>
+      <DrumPad callback={() => playAudio("Q")} trigger="Q" clip="https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3"/>
+      <DrumPad callback={() => playAudio("W")} trigger="W" clip="https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3"/>
+      <DrumPad callback={() => playAudio("E")} trigger="E" clip="https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3"/>
+      <h2 value={display} id="display" className="text-2xl text-bold text-center col-span-2 row-span-3">{display}</h2>
+      <DrumPad callback={() => playAudio("A")} trigger="A" clip="https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3"/>
+      <DrumPad callback={() => playAudio("S")} trigger="S" clip="https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3"/>
+      <DrumPad callback={() => playAudio("D")} trigger="D" clip="https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3"/>
+      <DrumPad callback={() => playAudio("Z")} trigger="Z" clip="https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3"/>
+      <DrumPad callback={() => playAudio("X")} trigger="X" clip="https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3"/>
+      <DrumPad callback={() => playAudio("C")} trigger="C" clip="https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3"/>
     </div>
   );
 }
