@@ -27,7 +27,7 @@ export default function DrumMachine() {
 
     sound.currentTime = 0;
     sound.play();
-    setDisplay(id);
+    setDisplay(`You just played ${id}`);
     }
   };
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function DrumMachine() {
 
   return (
     <div 
-      className="container mx-auto grid grid-cols-4 grid-rows-3 px-4 py-6 bg-gray-700 text-center w-3/4 md:h-1/2 h-3/4 justify-center rounded shadow-xl"
+      className="container mx-auto grid grid-cols-4 grid-rows-3 gap-2 grid-flow-col px-4 py-6 bg-gray-700 text-center w-3/4 md:h-1/2 h-3/4 justify-center rounded shadow-xl"
       id="drum-machine"
     >
       <DrumPad callback={() => playAudio("Q")} trigger="Q" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
@@ -49,7 +49,7 @@ export default function DrumMachine() {
       <DrumPad callback={() => playAudio("Z")} trigger="Z" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
       <DrumPad callback={() => playAudio("X")} trigger="X" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
       <DrumPad callback={() => playAudio("C")} trigger="C" clip="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"/>
-      <h2 value={display} id="display" className="text-2xl text-bold cols-span-1 rows-span-4">{display}</h2>
+      <h2 value={display} id="display" className="text-2xl text-bold col-span-2 row-span-3">{display}</h2>
     </div>
   );
 }
