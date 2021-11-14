@@ -11,24 +11,33 @@ import Footer from './layouts/Footer.astro';
     <BaseHead title="FCC JS Frameworks Projects" description="My projects for the Free Code Camp Frontend Framework Certification" />
   </head>
   <body>
-    <main class="bg-gray-800 text-gray-100 h-screen">
-      <div class="container mx-auto justify-center text-center flex flex-col p-16">
+    <main class="bg-gray-800 text-gray-100 flex flex-col min-h-screen">
+      <div class="justify-center text-center p-16">
         <h1 class="text-2xl text-bold p-4">My projects for the Free Code Camp Frontend Framework Certification</h1>  
         <br />
-        <ul>
-          <li id="1">
-            <a href="/projects/quote-machine" class="normal-link">
-            <h2 class="text-xl text-bold">Quote Machine</h2>
+        <ul class="grid grid-cols-1 grid-rows-auto bg-gray-800">
+          <li class="my-14" id="quote-machine">
+            <a
+              class="font-3xl font-bold rounded py-6 px-10 m-1 bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 shadow-md"
+              href="/projects/quote-machine"
+            >
+            Quote Machine
             </a>
           </li>
-          <li id="2">
-            <a href="/projects/markdown-previewer" class="normal-link">
-            <h2 class="text-xl text-bold">Markdown Previewer</h2>
+          <li class="my-14" id="markdown-previewer">
+            <a
+              class="font-3xl font-bold rounded py-6 px-10 m-1 bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 shadow-md"
+              href="/projects/markdown-previewer"
+            >
+            Markdown Previewer
             </a>
           </li>
-          <li id="3">
-            <a href="/projects/drum-machine" class="normal-link">
-            <h2 class="text-xl text-bold">Drum Machine</h2>
+          <li class="my-14" id="drum-machine">
+            <a
+              class="font-3xl font-bold rounded py-6 px-10 m-1 bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 shadow-md"
+              href="/projects/drum-machine"
+            >
+            Drum Machine
             </a>
           </li>
         </ul>
