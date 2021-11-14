@@ -73,6 +73,7 @@ export default function App() {
         onChange={(e) => updatePreview(e.target.value)}
         id="editor"
         className="bg-gray-600 text-gray-100 w-1/2 min-h-100 p-2 rounded border-solid border-2 border-gray-800"
+        aria-label="Markdown Input Box"
       >
       </textarea>
       <div
