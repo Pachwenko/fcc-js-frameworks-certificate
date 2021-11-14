@@ -2,6 +2,7 @@
 import App from '../../components/Quotes.jsx'
 import BaseHead from '../layouts/BaseHead.astro'
 import Navbar from '../layouts/Navbar.astro'
+import Footer from '../layouts/Footer.astro';
 
 ---
 <html lang="en">
@@ -14,4 +15,7 @@ import Navbar from '../layouts/Navbar.astro'
       <App client:load />
     </main>
   </body>
+  <footer>
+    <Footer />
+  </footer>
 </html>
