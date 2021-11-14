@@ -52,7 +52,7 @@ function DrumPad(props) {
   );
 }
 
-function RealDrumMachine() {
+function DrumMachine() {
   const displayText = useSelector((state) => state.displayText.value);
   return (
     <div
@@ -106,10 +106,10 @@ function RealDrumMachine() {
   );
 }
 
-export default function DrumMachine() {
+export default function App() {
   return (
     <Provider store={store}>
-      <RealDrumMachine />
+      <DrumMachine />
     </Provider>
   );
 }

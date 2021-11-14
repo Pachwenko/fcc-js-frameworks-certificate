@@ -53,7 +53,7 @@ marked.setOptions({
   gfm: true,
 });
 
-export default function MarkdownPreviewer() {
+export default function App() {
   const [markdownInput, setMarkdownInput] = useState(placeholder);
   const [preview, setPreview] = useState(marked(placeholder, new marked.Renderer()));
   function updatePreview(markdownInput) {

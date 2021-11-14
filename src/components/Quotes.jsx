@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Quotes() {
+export default function App() {
   const [quote, setQuote] = useState({});
   const fetchQuote = async () => {
     const response = await fetch(

@@ -1,11 +1,8 @@
 ---
-// Component Imports
-import Quotes from '../../components/Quotes.jsx'
+import App from '../../components/Quotes.jsx'
 import BaseHead from '../layouts/BaseHead.astro'
 import Navbar from '../layouts/Navbar.astro'
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 <html lang="en">
   <head>
@@ -14,11 +11,7 @@ import Navbar from '../layouts/Navbar.astro'
   <body>
     <Navbar />
     <main class="bg-gray-900 fill-pink-500 text-gray-100 h-screen flex flex-col justify-center mx-auto">
-      <!-- 
-        Need to specify when to load the component, in this case on page load 
-        See docs: https://docs.astro.build/core-concepts/component-hydration/
-      -->
-      <Quotes client:load />
+      <App client:load />
     </main>
   </body>
 </html>
