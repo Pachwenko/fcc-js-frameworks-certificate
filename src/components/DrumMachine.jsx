@@ -17,7 +17,6 @@ const displayTextSlice = createSlice({
 
 const { setDisplayText } = displayTextSlice.actions;
 
-
 const store = configureStore({
   reducer: {
     displayText: displayTextSlice.reducer,
@@ -34,7 +33,7 @@ function DrumPad(props) {
     if (sound) {
       sound.currentTime = 0;
       sound.play();
-      dispatch(setDisplayText(`You just played ${id}`));
+      dispatch(setDisplayText(`You just played ${sound.src.split("/").pop()}`));
     }
   };
   useEffect(() => {
