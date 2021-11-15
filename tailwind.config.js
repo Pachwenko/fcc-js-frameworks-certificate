@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 // tailwind.config.js
 module.exports = {
   mode: 'jit',
@@ -7,8 +8,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'diamond-pattern': "url('/overlapping-diamonds.svg')",
-      }
-    }
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
