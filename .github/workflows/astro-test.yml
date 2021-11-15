@@ -15,5 +15,5 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-      - run: yarn install
+      - run: yarn install --immutable
       - run: yarn run test
