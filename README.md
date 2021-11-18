@@ -2,9 +2,7 @@
 
 See this site live at [https://stoic-leakey-17456a.netlify.app/](https://stoic-leakey-17456a.netlify.app/)
 
-This site is built with [Astro](https://astro.build/) and [React](https://reactjs.org/) to complete the [Free Code Camp Frontend Development Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/). The course covers [Bootstrap](https://getbootstrap.com/), [jQuery](https://jquery.com/), [SASS](https://sass-lang.com/), [React](https://reactjs.org/), and [Redux](https://redux.js.org/). For the final projects I chose [React](https://reactjs.org/) since I was curious what the hype has been about, but you should be able to use any framework and Astro supports quite a few.
-
-Styling is done with [Tailwind](https://tailwindcss.com/).
+This site is built with [Astro](https://astro.build/) and [React](https://reactjs.org/) to complete the [Free Code Camp Frontend Development Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/). The course covers [Bootstrap](https://getbootstrap.com/), [jQuery](https://jquery.com/), [SASS](https://sass-lang.com/), [React](https://reactjs.org/), and [Redux](https://redux.js.org/). For the final projects I chose [React](https://reactjs.org/) and [Svelte](https://svelte.dev/) since I usually use [Ember.js](https://emberjs.com/) for work, but you should be able to use any framework and Astro supports quite a few.
 
 ## Development
 
