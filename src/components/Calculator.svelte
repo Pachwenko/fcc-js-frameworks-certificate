@@ -1,62 +1,65 @@
 <script>
   import mexp from 'math-expression-evaluator'
-  let display = '0';
-  let previousResult = undefined;
-  let operations = [];
-  let errorMessage = '';
+  let display = '0'
+  let previousResult = undefined
+  let operations = []
+  let errorMessage = ''
 
-  const MATH_SYMBOLS = ['*', '/', '-', '+'];
-  const DISSALLOWED_OPERATIONS = [[".", "."]];
+  const MATH_SYMBOLS = ['*', '/', '-', '+']
+  const DISSALLOWED_OPERATIONS = [['.', '.']]
 
   function disallowedOperation(op) {
-    return DISSALLOWED_OPERATIONS.filter(
-      disallowedOps => {
-        let previousOperation = disallowedOps[0];
-        let newOperation = disallowedOps[1];
-        return previousOperation === operations[operations.length - 1] && newOperation === op;
-      }
-    ).length > 0;
+    return (
+      DISSALLOWED_OPERATIONS.filter((disallowedOps) => {
+        let previousOperation = disallowedOps[0]
+        let newOperation = disallowedOps[1]
+        return (
+          previousOperation === operations[operations.length - 1] &&
+          newOperation === op
+        )
+      }).length > 0
+    )
   }
 
   function addOperation(op) {
     if (operations.length > 0 && disallowedOperation(op)) {
-      return;
-    }
-    else if (MATH_SYMBOLS.includes(op) && operations.length === 0) {
-      operations = [previousResult, op];
+      return
+    } else if (MATH_SYMBOLS.includes(op) && operations.length === 0) {
+      operations = [previousResult, op]
     } else {
-      operations.push(op);
+      operations.push(op)
     }
-    errorMessage = "";
-    display = operations.join('');
+    errorMessage = ''
+    display = operations.join('')
   }
   function allClear() {
-    errorMessage = "";
-    operations = [];
-    display = '0';
+    errorMessage = ''
+    operations = []
+    display = '0'
   }
   function equals() {
     try {
-      let result = mexp.eval(operations.join(''));
-      display = result;
-      previousResult = result;
-      operations = [];
+      let result = mexp.eval(operations.join(''))
+      display = result
+      previousResult = result
+      operations = []
     } catch (error) {
-      errorMessage = error.message;
+      errorMessage = error.message
     }
   }
 </script>
 
-<div
-  class="mx-auto my-10 p-10 md:w-1/2 text-center flex justify-center"
->
+<div class="mx-auto my-10 p-10 md:w-1/2 text-center flex justify-center">
   <div
     class="container grid grid-cols-4 gap-2 border-solid border-2 border-gray-600 mx-auto p-4 justify-center"
   >
     <h2 id="error" class="text-bold text-2xl text-red-800 col-span-4">
       {errorMessage}
     </h2>
-    <h2 id="display" class="text-bold text-2xl bg-black col-span-4 overflow-hidden">
+    <h2
+      id="display"
+      class="text-bold text-2xl bg-black col-span-4 overflow-hidden"
+    >
       {display}
     </h2>
     <button
@@ -180,5 +183,3 @@
     </button>
   </div>
 </div>
-
-<slot />
