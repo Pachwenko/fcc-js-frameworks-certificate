@@ -18,7 +18,7 @@ function createCount(initialValue, minValue, maxValue) {
   };
 }
 
-const breakLength = createCount(1, 1, 60);
-const sessionLength = createCount(1, 1, 60);
+const breakLength = createCount(5, 1, 60);
+const sessionLength = createCount(25, 1, 60);
 
 export { breakLength, sessionLength };
