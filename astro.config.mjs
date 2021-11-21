@@ -9,9 +9,9 @@
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
   // Enable the React renderer to support React JSX components.
-  buildOptions: {
-    site: 'https://pachwenko.github.io/fcc-js-frameworks-certificate/',
-  },
+  // buildOptions: {
+  //   site: 'https://pachwenko.github.io/fcc-js-frameworks-certificate/',
+  // },
   renderers: ['@astrojs/renderer-react', '@astrojs/renderer-svelte'],
   devOptions: {
     tailwindConfig: './tailwind.config.js',
