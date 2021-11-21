@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "npm-run-all lint check build",
+    "test": "npm-run-all check build",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix",
     "check": "astro check"
