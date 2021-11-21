@@ -160,7 +160,6 @@
   </button>
   <button
     on:click={fastForward}
-    id="reset"
     class="font-xl font-bold col-span-2 rounded p-2 m-1 bg-gray-400 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 shadow-lg"
   >
     Fast Forward
