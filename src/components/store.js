@@ -1,4 +1,4 @@
-import { readable, writable } from 'svelte/store';
+import { writable } from 'svelte/store';
 
 function createCount(initialValue, minValue, maxValue) {
   const { subscribe, set, update } = writable(initialValue);
@@ -21,14 +21,4 @@ function createCount(initialValue, minValue, maxValue) {
 const breakLength = createCount(5, 1, 60);
 const sessionLength = createCount(25, 1, 60);
 
-const currentTime = readable(new Date(), function start(set) {
-	const interval = setInterval(() => {
-		set(new Date());
-	}, 1000);
-
-	return function stop() {
-		clearInterval(interval);
-	};
-});
-
-export { breakLength, sessionLength, currentTime };
+export { breakLength, sessionLength };
