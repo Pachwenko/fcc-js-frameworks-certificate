@@ -1,5 +1,6 @@
 <script>
-    import { breakLength, sessionLength } from './store.js';
+    import { derived } from 'svelte/store';
+    import { breakLength, sessionLength, currentTime } from './store.js';
     const SESSION_MODE = "SESSION";
     const BREAK_MODE = "BREAK";
 
@@ -7,11 +8,27 @@
     let seconds = "00";
     let current_mode = SESSION_MODE;
     let inProgress = false;
-    let finishedTime;
+    let finishedTime = new Date();
     let timerInterval;
+    const finishedTime2 = derived(
+        currentTime,
+        $currentTime => {
+            return new Date(finishedTime - $currentTime)
+        }
+    );
+    const minutes2 = derived(
+        finishedTime2,
+        $finishedTime2 => $finishedTime2.getMinutes()
+    );
+    const seconds2 = derived(
+        finishedTime2,
+        $finishedTime2 => $finishedTime2.getSeconds()
+    );
 
     $: if (!inProgress) { minutes = $sessionLength };
     $: if (minutes === 0 && seconds === 0) { playSound() };
+    // $: minutes2 = String($finishedTime2.getMinutes()).padStart(2, "0");
+    // $: seconds2 = String($finishedTime2.getSeconds()).padStart(2, "0");
 
     function playSound() {
         stopTimer();
@@ -52,14 +69,14 @@
     function calculateEndTime() {
         let endTime = new Date();
         let length = current_mode === SESSION_MODE ? $sessionLength : $breakLength;
-        endTime.setMinutes(finishedTime.getMinutes() + length)
+        endTime.setMinutes(endTime.getMinutes() + length)
         return endTime
     }
 
     function startTimer() {
         stopSound();
-        finishedTime = calculateEndTime();
-        timerInterval = setInterval(tickTimer, 1000);
+        // finishedTime = calculateEndTime();
+        // timerInterval = setInterval(tickTimer, 100);
         inProgress = true;
     }
 
@@ -120,7 +137,7 @@
     </div>
     <div class="col-span-full border-4 border-solid border-gray-400 shadow-lg bg-black rounded">
         <h2 id="timer-label" class="text-2xl text-bold">{current_mode}</h2>
-        <h2 id="time-left" class="text-2xl text-bold">{minutes}:{seconds}</h2>
+        <h2 id="time-left" class="text-2xl text-bold">{$minutes2}:{$seconds2}</h2>
     </div>
     <button 
         on:click={toggle} 
