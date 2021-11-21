@@ -7,7 +7,7 @@
     let seconds = "00";
     let current_mode = SESSION_MODE;
     let inProgress = false;
-    let timerFinished;
+    let finishedTime;
     let timerInterval;
 
     $: if (!inProgress) { minutes = $sessionLength };
@@ -23,7 +23,8 @@
             current_mode = SESSION_MODE;
             minutes = $sessionLength;
         }
-        calculateEndTime();
+        inProgress = false;
+        finishedTime = calculateEndTime();
         tickTimer();
     }
 
@@ -43,20 +44,21 @@
     }
 
     function tickTimer() {
-        let time = new Date(timerFinished - new Date());
+        let time = new Date(finishedTime - new Date());
         minutes = time.getMinutes();
         seconds = time.getSeconds();
     }
 
     function calculateEndTime() {
-        timerFinished = new Date();
+        let endTime = new Date();
         let length = current_mode === SESSION_MODE ? $sessionLength : $breakLength;
-        timerFinished.setMinutes(timerFinished.getMinutes() + length)
+        endTime.setMinutes(finishedTime.getMinutes() + length)
+        return endTime
     }
 
     function startTimer() {
         stopSound();
-        calculateEndTime();
+        finishedTime = calculateEndTime();
         timerInterval = setInterval(tickTimer, 1000);
         inProgress = true;
     }
@@ -76,30 +78,62 @@
 </script>
 
 <div
-  class="mx-auto my-10 p-10 md:w-1/2 text-center justify-center"
+  class="mx-auto my-10 p-10 md:w-1/2 text-center justify-center grid gap-2 grid-cols-2 grid-rows-auto"
 >
-    <h1 id="break-label">Break length: {$breakLength}</h1>
-    <button on:click={breakLength.decrement} id="break-decrement">
-        -
-    </button>
-    <button on:click={breakLength.increment} id="break-increment">
-        +
-    </button>
-    <br />
-    <h1 id="session-label">Session Length: {$sessionLength}</h1>
-    <button on:click={sessionLength.decrement} id="session-decrement">
-        -
-    </button>
-    <button on:click={sessionLength.increment} id="session-increment">
-        +
-    </button>
-    <br />
-    <h2 id="timer-label">{current_mode}</h2>
-    <h2 id="time-left">{minutes}:{seconds}</h2>
-    <button on:click={toggle} id="start_stop">
+    <div>
+        <h1 id="break-label" class="text-xl text-bold">Break length: {$breakLength}</h1>
+    </div>
+    <div>
+        <h1 id="session-label" class="text-xl text-bold">Session Length: {$sessionLength}</h1>
+    </div>
+    <div>
+        <button 
+            on:click={breakLength.decrement} 
+            id="break-decrement" 
+            class="font-xl font-bold rounded p-2 m-1 text-gray-800 bg-gray-300 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 shadow-lg"
+        >
+            -
+        </button>
+        <button 
+            on:click={breakLength.increment} 
+            id="break-increment"
+            class="font-xl font-bold rounded p-2 m-1 text-gray-800 bg-gray-300 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 shadow-lg"
+        >
+            +
+        </button>
+    </div>
+    <div>
+        <button 
+            on:click={sessionLength.decrement} 
+            id="session-decrement"
+            class="font-xl font-bold rounded p-2 m-1 text-gray-800 bg-gray-300 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 shadow-lg"
+        >
+            -
+        </button>
+        <button 
+            on:click={sessionLength.increment} 
+            id="session-increment"
+            class="font-xl font-bold rounded p-2 m-1 text-gray-800 bg-gray-300 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 shadow-lg"
+        >
+            +
+        </button>
+    </div>
+    <div class="col-span-full border-4 border-solid border-gray-400 shadow-lg bg-black rounded">
+        <h2 id="timer-label" class="text-2xl text-bold">{current_mode}</h2>
+        <h2 id="time-left" class="text-2xl text-bold">{minutes}:{seconds}</h2>
+    </div>
+    <button 
+        on:click={toggle} 
+        id="start_stop"
+        class="font-xl font-bold rounded p-2 m-1 bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 shadow-lg"
+    >
         Start/Stop
     </button>
-    <button on:click={reset} id="reset">
+    <button 
+        on:click={reset} 
+        id="reset"
+        class="font-xl font-bold rounded p-2 m-1 bg-red-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 shadow-lg"
+    >
         Reset
     </button>
     <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" />
