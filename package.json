@@ -21,7 +21,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
     "@vitejs/plugin-react": "^1.0.9",
-    "astro": "^0.20.12",
+    "astro": "^0.21.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.0",
