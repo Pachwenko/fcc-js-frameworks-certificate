@@ -77,7 +77,7 @@ export default function App() {
       >
       </textarea>
       <div
-        dangerouslySetInnerHTML={{__html: preview}}
+        dangerouslySetInnerHTML={{ __html: preview }}
         id="preview"
         className="prose min-h-100 p-2 w-1/2 rounded text-left bg-gray-100 border-solid border-2 border-blue-800"
       ></div>
