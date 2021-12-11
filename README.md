@@ -1,8 +1,8 @@
 # My Free Code Camp Frontend Libraries Certification Projects
 
-See this site live at [https://stoic-leakey-17456a.netlify.app/](https://stoic-leakey-17456a.netlify.app/)
+See this site live at [https://fcc-js-frameworks-projects.patrickmccartney.dev/](https://fcc-js-frameworks-projects.patrickmccartney.dev/)
 
-This site is built with [Astro](https://astro.build/) and [React](https://reactjs.org/) to complete the [Free Code Camp Frontend Development Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/). The course covers [Bootstrap](https://getbootstrap.com/), [jQuery](https://jquery.com/), [SASS](https://sass-lang.com/), [React](https://reactjs.org/), and [Redux](https://redux.js.org/). For the final projects I chose [React](https://reactjs.org/) and [Svelte](https://svelte.dev/) since I usually use [Ember.js](https://emberjs.com/) for work, but you should be able to use any framework and Astro supports quite a few.
+This site is built with [Astro](https://astro.build/), [React](https://reactjs.org/), and [Svelte](https://svelte.dev/) to complete the [Free Code Camp Frontend Development Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/). The course covers [Bootstrap](https://getbootstrap.com/), [jQuery](https://jquery.com/), [SASS](https://sass-lang.com/), [React](https://reactjs.org/), and [Redux](https://redux.js.org/). For the final projects I chose [React](https://reactjs.org/) and [Svelte](https://svelte.dev/) since I usually use [Ember.js](https://emberjs.com/) for work, but you should be able to use any framework and Astro supports quite a few.
 
 ## Development
 
@@ -14,6 +14,4 @@ This site is built with [Astro](https://astro.build/) and [React](https://reactj
 - `yarn build` or `npm build`
 - The `dist` folder can now be uploaded or served wherever you like.
 
-This site is currently deployed with Netlify (Astro is incompatible w/ Github Pages currently)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8b8b64f5-9230-4800-a50b-f46946b9004c/deploy-status)](https://app.netlify.com/sites/stoic-leakey-17456a/deploys)
+This site is currently deployed on the [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform/) which is free and highly configurable.
