@@ -1,31 +1,27 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch, Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-import { createSlice } from "@reduxjs/toolkit";
+import { createStore } from 'redux';
 
-const displayTextSlice = createSlice({
-  name: "displayText",
-  initialState: {
-    value: "Play Something!",
-  },
-  reducers: {
-    setDisplayText: (state, action) => {
-      state.value = action.payload;
-    },
-  },
-});
+const UPDATE_DISPLAY_TEXT = "UPDATE_DISPLAY_TEXT";
 
-const { setDisplayText } = displayTextSlice.actions;
+function displayTextReducer(state = { displayText: { value: "Play Something!" } }, action) {
+  switch (action.type) {
+    case UPDATE_DISPLAY_TEXT:
+      return { displayText: { value: action.payload } };
+    default:
+      return state;
+  }
+}
 
-const store = configureStore({
-  reducer: {
-    displayText: displayTextSlice.reducer,
-  },
-});
+let store = createStore(displayTextReducer);
+
+function setDisplayText(newText) {
+  return { type: UPDATE_DISPLAY_TEXT, payload: newText };
+}
 
 function DrumPad(props) {
   const dispatch = useDispatch();
-  function playAudio(id)  {
+  function playAudio(id) {
     if (!id) {
       return;
     }
