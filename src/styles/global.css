@@ -1,7 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.normal-link {
-    @apply underline mx-1 text-blue-600 hover:text-blue-800 visited:text-purple-600
-}
